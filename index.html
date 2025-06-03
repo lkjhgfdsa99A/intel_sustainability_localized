@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability Journey | Intel Timeline</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Language Switcher Script -->
+  <script>
+    // Function to toggle between LTR and RTL
+    function toggleDirection() {
+      const html = document.documentElement;
+      if (html.getAttribute('dir') === 'ltr') {
+        html.setAttribute('dir', 'rtl');
+        html.classList.remove('ltr');
+        html.classList.add('rtl');
+        document.getElementById('dirToggle').textContent = 'Switch to LTR';
+      } else {
+        html.setAttribute('dir', 'ltr');
+        html.classList.remove('rtl');
+        html.classList.add('ltr');
+        document.getElementById('dirToggle').textContent = 'Switch to RTL';
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="loading-logo" />
+      <p class="loading-text">Loading sustainability journey...</p>
+    </div>
+  </div>
+
+  <!-- Intel Corner Logo -->
+  <a href="#hero-section">
+    <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="corner-logo active" id="corner-logo" />
+  </a>
+
+  <!-- Language/Direction Switcher -->
+  <button id="dirToggle" class="dir-toggle btn" onclick="toggleDirection()">Switch to RTL</button>
+
+  <!-- Header / Hero Section -->
+  <header class="hero container-fluid" id="hero-section">
+    <!-- Hero background -->
+    <div class="hero-background">
+      <!-- Floating sustainability elements with improved positioning and parallax effect -->
+      <div class="floating-element parallax-tech" data-speed="0.08" style="top: 15%; left: 12%;">
+        <div class="eco-icon">♻️</div>
+      </div>
+      <div class="floating-element parallax-tech" data-speed="0.06" style="top: 65%; left: 75%;">
+        <div class="eco-icon">🌱</div>
+      </div>
+      <div class="floating-element parallax-tech" data-speed="0.1" style="top: 22%; left: 82%;">
+        <div class="eco-icon">🍃</div>
+      </div>
+      <div class="floating-element parallax-tech" data-speed="0.07" style="top: 78%; left: 15%;">
+        <div class="eco-icon">🌎</div>
+      </div>
+      <div class="floating-element parallax-tech" data-speed="0.09" style="top: 35%; left: 45%;">
+        <div class="eco-icon">💧</div>
+      </div>
+    </div>
+
+    <!-- Central visual element -->
+    <div class="hero-visual position-absolute top-50 start-50 translate-middle">
+      <div class="rotating-object parallax-tech" id="rotating-object" data-speed="0.12"></div>
+    </div>
+    
+    <div class="hero-content row justify-content-center">
+      <div class="col-lg-10">
+        <!-- Intel logo -->
+        <div class="intel-logo-container">
+          <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="intel-logo" />
+        </div>
+        
+        <!-- Large hero title with animation -->
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Sustainability</span></span>
+          <span class="line"><span class="word">Through</span> <span class="word">Time</span></span>
+        </h1>
+
+        <!-- Subheading / Description -->
+        <p class="hero-description">
+          Explore Intel's journey through time, discovering how our commitment
+          to innovation has shaped a more sustainable future for technology 
+          and our planet.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Horizontal Scrolling Text Section -->
+    <section class="horizontal-section container-fluid" id="horizontal-section">
+      <!-- Diagonal scrolling text layers -->
+      <div class="diagonal-text-container diagonal-text-1">
+        <div class="diagonal-text">Innovation • Technology • Sustainability • Progress • Innovation • Technology • Sustainability • Progress •</div>
+      </div>
+      <div class="diagonal-text-container diagonal-text-2">
+        <div class="diagonal-text">Environmental • Social • Governance • Performance • Environmental • Social • Governance • Performance •</div>
+      </div>
+      <div class="diagonal-text-container diagonal-text-3">
+        <div class="diagonal-text">Circular Economy • Carbon Neutral • Clean Energy • Responsible • Circular Economy • Carbon Neutral • Clean Energy •</div>
+      </div>
+      
+      <!-- Horizontal Scrolling Text -->
+      <div class="horizontal-text active mb-4" id="horizontal-text">
+        <div class="scrolling-text">Sustainability • Innovation • Future • Responsibility • </div>
+        <div class="scrolling-text">Sustainability • Innovation • Future • Responsibility • </div>
+      </div>
+
+      <!-- Tech Elements -->
+      <div class="tech-elements active row justify-content-center align-items-center" id="tech-elements">
+        <!-- Main centered tagline with overlay - Now floating without background -->
+        <div class="col-12 d-flex justify-content-center align-items-center position-relative" style="min-height: 30vh;">
+          <div class="floating-tagline">
+            <h2 class="tech-tagline-heading">TECHNOLOGY FOR A SUSTAINABLE FUTURE</h2>
+            <p class="tech-tagline-text">Innovating for the planet since 1968 through responsible practices, renewable resources, and cutting-edge solutions that minimize environmental impact while maximizing positive social change.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sustainability Feature Sections -->
+      <div class="container mt-3 mb-4">      
+        <div class="sustainability-features row">
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 22V8H7V22H3ZM10 22V2H14V22H10ZM17 22V14H21V22H17Z" fill="url(#paint0_linear)"/>
+                  <defs>
+                    <linearGradient id="paint0_linear" x1="3" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0068b5"/>
+                      <stop offset="1" stop-color="#00a291"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="feature-title">RISE Strategy</h3>
+              <p class="feature-text">
+                Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, Intel sets ambitious 2030 goals, including driving industry-wide progress on climate action, water stewardship, and waste reduction.
+              </p>
+              <a href="#" class="feature-link">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-2.29-2.333A8.001 8.001 0 0 0 17.66 6.34A8.001 8.001 0 0 0 9.71 19.667zM12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" fill="url(#paint1_linear)"/>
+                  <defs>
+                    <linearGradient id="paint1_linear" x1="2" y1="12" x2="22" y2="12" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0068b5"/>
+                      <stop offset="1" stop-color="#00a291"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="feature-title">Commitment</h3>
+              <p class="feature-text">
+                In 2022, Intel pledged to achieve net-zero greenhouse gas emissions (Scope 1 and 2) by 2040. This commitment builds on decades of environmental initiatives and partnerships across the semiconductor industry.
+              </p>
+              <a href="#" class="feature-link">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3.1L7.05 8.05a7 7 0 1 0 9.9 0L12 3.1zm0-2.828l6.364 6.364a9 9 0 1 1-12.728 0L12 .272z" fill="url(#paint2_linear)"/>
+                  <path d="M12 18a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="url(#paint2_linear)"/>
+                  <defs>
+                    <linearGradient id="paint2_linear" x1="3" y1="12" x2="21" y2="12" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0068b5"/>
+                      <stop offset="1" stop-color="#00a291"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="feature-title">Water & Waste</h3>
+              <p class="feature-text">
+                Intel conserves billions of gallons of water annually and collaborates with local communities to restore watersheds. Intel also upcycles and recycles materials to reduce waste and advance a circular economy.
+              </p>
+              <a href="#" class="feature-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 position-relative" style="min-height: 10vh;">
+          <!-- Diagrams positioned in a more balanced, aesthetically pleasing layout -->
+          <!-- Top left diagram -->
+          <div class="circuit-board parallax-tech position-absolute" data-speed="-0.03" style="top: 3%; left: 6%; width: 15vw; height: 15vw; max-width: 200px; max-height: 200px; opacity: 0.5;"></div>
+          
+          <!-- Bottom right diagram -->
+          <div class="processor-chip parallax-tech position-absolute" data-speed="0.05" style="bottom: 3%; right: 6%; width: 15vw; height: 15vw; max-width: 200px; max-height: 200px; opacity: 0.5;"></div>
+          
+          <!-- Bottom left small diagram -->
+          <div class="processor-chip parallax-tech position-absolute" data-speed="0.08" style="bottom: 15%; left: 22%; width: 10vw; height: 10vw; max-width: 120px; max-height: 120px; opacity: 0.3;"></div>
+          
+          <!-- Top right small diagram -->
+          <div class="circuit-board parallax-tech position-absolute" data-speed="-0.06" style="top: 15%; right: 22%; width: 10vw; height: 10vw; max-width: 120px; max-height: 120px; opacity: 0.3;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section container-fluid" id="timeline-section">
+      <h2 class="section-title text-center mb-3">Intel's Sustainability Journey</h2>
+      
+      <!-- Horizontal Timeline Instructions - Modified -->
+      <div class="timeline-instructions text-center mb-4">
+        <small class="d-block text-muted"><i class="bi bi-info-circle"></i> Hold <kbd>Shift</kbd> + scroll to navigate the timeline</small>
+      </div>
+      
+      <!-- Timeline Background Text -->
+      <div class="timeline-bg-text active" id="timeline-bg-text">
+        <div class="intel-bg-text intel-bg-text-1">Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future</div>
+        <div class="intel-bg-text intel-bg-text-2">Environmental Social Governance Performance Environmental Social Governance Performance Environmental Social Governance Performance Environmental Social Governance Performance</div>
+        <div class="intel-bg-text intel-bg-text-3">Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling</div>
+      </div>
+      
+      <!-- Intel brand accent elements -->
+      <div class="intel-brand-accent intel-accent-1"></div>
+      <div class="intel-brand-accent intel-accent-2"></div>
+      <div class="intel-brand-accent intel-accent-3"></div>
+      <div class="intel-brand-accent intel-accent-4"></div>
+      
+      <!-- Horizontal Timeline Track -->
+      <div class="timeline-track-container">
+        <div class="timeline-track-line"></div>
+        
+        <!-- Timeline Cards - Now in a horizontal scrollable container -->
+        <div class="timeline-cards-horizontal" id="timeline-cards">
+          <!-- Add a scroll focus area to control where mouse wheel events work -->
+          <div class="scroll-focus-area" id="scroll-focus-area"></div>
+          
+          <!-- Card 1: 1968 -->
+          <div class="timeline-card-wrapper" data-index="0">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">1968</h2>
+                  <h3 class="event">Intel Founded</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/1.jpg" alt="Intel founders Robert Noyce and Gordon Moore in 1968" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Robert Noyce and Gordon Moore rename the newly formed company 
+                      NM Electronics to Intel Corporation, laying the foundation for 
+                      decades of technological innovation.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: 1971 -->
+          <div class="timeline-card-wrapper" data-index="1">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">1971</h2>
+                  <h3 class="event">First Microprocessor</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/2.jpg" alt="Intel 4004 microprocessor, the world's first commercial microprocessor, released in 1971" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel debuts the 4004, the world's first commercial microprocessor, 
+                      igniting the microprocessor revolution and propelling the future 
+                      of computing devices.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: 1978 -->
+          <div class="timeline-card-wrapper" data-index="2">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">1978</h2>
+                  <h3 class="event">8086 Processor</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/3.jpg" alt="Intel 8086 processor released in 1978, establishing the x86 architecture" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Launch of the 8086 processor, establishing the x86 architecture 
+                      that drives countless PCs and servers in the modern era.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: 1985 -->
+          <div class="timeline-card-wrapper" data-index="3">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">1985</h2>
+                  <h3 class="event">386 Processor</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/4.jpg" alt="Intel 386 processor from 1985, introducing 32-bit computing" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      The 386 processor introduces 32-bit computing to the personal computer market, 
+                      capable of addressing 4GB of memory, a revolutionary step forward.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: 2008 -->
+          <div class="timeline-card-wrapper" data-index="4">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">2008</h2>
+                  <h3 class="event">Sustainability Summit</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/sustainability-summit.png" alt="Intel Sustainability Summit in 2008, gathering industry leaders for environmental initiatives" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel hosts its first Sustainability Summit, bringing together industry leaders 
+                      to address environmental challenges and set ambitious sustainability goals.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: 2012 -->
+          <div class="timeline-card-wrapper" data-index="5">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">2012</h2>
+                  <h3 class="event">Renewable Electricity</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/renewable-electricity.png" alt="Intel's 2012 renewable electricity initiative, becoming the largest voluntary corporate purchaser of green power" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel becomes the largest voluntary corporate purchaser of green power in the U.S., 
+                      with 100% of U.S. and European electricity coming from renewable sources.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: 2019 -->
+          <div class="timeline-card-wrapper" data-index="6">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">2019</h2>
+                  <h3 class="event">RISE Strategy</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/RISE-Strategy.png" alt="Intel's RISE (Responsible, Inclusive, Sustainable, Enabling) Strategy launched in 2019" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel launches its RISE strategy (Responsible, Inclusive, Sustainable, Enabling), 
+                      setting goals for 2030 to create a more responsible, inclusive, and sustainable world.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: 2022 -->
+          <div class="timeline-card-wrapper" data-index="7">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">2022</h2>
+                  <h3 class="event">Net Zero Commitment</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/net-zero.png" alt="Intel's 2022 Net Zero commitment for achieving net positive water use and 100% renewable electricity" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel commits to achieving net positive water use, 100% renewable electricity, 
+                      and zero waste to landfills across global operations by 2030.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: 2023 -->
+          <div class="timeline-card-wrapper" data-index="8">
+            <div class="milestone-card">
+              <div class="card-bg"></div>
+              <div class="card-content d-flex flex-column">
+                <div class="card-info">
+                  <h2 class="year">2023</h2>
+                  <h3 class="event">GHG Emissions Reduction</h3>
+                </div>
+                <div class="card-visual mt-auto">
+                  <img src="img/GHG-Emissions.png" alt="Intel's 2023 greenhouse gas emissions reduction achievement of 39% since 2019" class="card-image" />
+                  <div class="card-description-overlay d-flex align-items-center justify-content-center">
+                    <p class="card-description">
+                      Intel reports a 39% reduction in Scope 1 and 2 greenhouse gas emissions 
+                      since 2019, marking significant progress toward 2030 environmental goals.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-decorative-element"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation dots -->
+        <div class="timeline-indicators" id="timeline-indicators"></div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section container-fluid" id="newsletter-section">
+      <!-- Background elements -->
+      <div class="newsletter-bg-elements">
+        <div class="newsletter-bg-circle circle-1"></div>
+        <div class="newsletter-bg-circle circle-2"></div>
+        <div class="newsletter-bg-circle circle-3"></div>
+        <div class="newsletter-bg-line line-1"></div>
+        <div class="newsletter-bg-line line-2"></div>
+      </div>
+      
+      <div class="newsletter-container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="newsletter-content text-center">
+              <h2 class="newsletter-title">Stay Connected with Intel's Sustainability Journey</h2>
+              <p class="newsletter-description">
+                Subscribe to our newsletter for updates on Intel's latest sustainability initiatives, 
+                innovations, and environmental impact.
+              </p>
+              
+              <form class="newsletter-form needs-validation" novalidate aria-labelledby="newsletter-title">
+                <div class="row g-3 justify-content-center">
+                  <div class="col-md-6 col-lg-5">
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required aria-describedby="emailInputHelp">
+                      <label for="emailInput">Email address</label>
+                      <div class="invalid-feedback" id="emailInputHelp">
+                        Please provide a valid email address.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-lg-2 d-grid">
+                    <button type="submit" class="btn btn-subscribe" aria-label="Subscribe to newsletter">Subscribe</button>
+                  </div>
+                </div>
+                <div class="form-check mt-3 d-inline-block">
+                  <input class="form-check-input" type="checkbox" value="" id="privacyCheck" required aria-describedby="privacyHelp">
+                  <label class="form-check-label" for="privacyCheck">
+                    I agree to Intel's <a href="#" class="privacy-link">privacy policy</a>
+                  </label>
+                  <div class="invalid-feedback" id="privacyHelp">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </form>
+              
+              <!-- Floating decoration elements -->
+              <div class="floating-decoration">
+                <div class="float-element element-1">
+                  <i class="bi bi-envelope-paper"></i>
+                </div>
+                <div class="float-element element-2">
+                  <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <div class="float-element element-3">
+                  <i class="bi bi-leaf"></i>
+                </div>
+                <div class="float-element element-4">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer py-5">
+    <div class="footer-content container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <div class="footer-logo mb-4">
+            <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="img-fluid" style="max-width: 120px;" />
+          </div>
+          <div class="footer-text">
+            <p>Intel's commitment to sustainability continues to evolve as we innovate for a better tomorrow.</p>
+            <p class="mb-3">© 2024 Intel Corporation. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Navigation -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <nav class="footer-nav text-center">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Terms of Use</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Contact Us</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Accessibility</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Sustainability Report</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simplified JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const loadingScreen = document.getElementById('loading-screen');
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+      const rotatingObject = document.getElementById('rotating-object');
+      const timelineCards = document.querySelector('.timeline-cards-horizontal');
+      const timelineInstructions = document.querySelector('.timeline-instructions');
+      const scrollFocusArea = document.getElementById('scroll-focus-area');
+      const timelineScrollHint = document.getElementById('timeline-scroll-hint');
+      const timelineIndicators = document.getElementById('timeline-indicators');
+      const newsletterForm = document.querySelector('.newsletter-form');
+      
+      // Hide loading screen after a short delay
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+      }, 1500);
+      
+      // Custom cursor
+      document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+          cursorFollower.style.left = e.clientX + 'px';
+          cursorFollower.style.top = e.clientY + 'px';
+        }, 80);
+      });
+      
+      // Simple parallax effect for tech elements
+      const parallaxElements = document.querySelectorAll('.parallax-tech');
+      
+      window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        
+        // Change rotation to parallax movement for the hero object
+        if (rotatingObject) {
+          rotatingObject.style.transform = `translateY(${scrollY * 0.12}px)`;
+        }
+        
+        // Simple parallax effect
+        parallaxElements.forEach(element => {
+          const speed = element.getAttribute('data-speed');
+          element.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+      });
+      
+      // Timeline carousel functionality
+      if (timelineCards) {
+        const cardWrappers = timelineCards.querySelectorAll('.timeline-card-wrapper');
+        const cardWidth = 400; // Card width in pixels
+        const totalCards = cardWrappers.length;
+        let isMobileView = window.innerWidth <= 768;
+        
+        // Function to check if we're in mobile view
+        function checkMobileView() {
+          return window.innerWidth <= 768;
+        }
+        
+        // Create indicator dots
+        for (let i = 0; i < totalCards; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('timeline-dot');
+          dot.setAttribute('data-index', i);
+          dot.addEventListener('click', () => {
+            scrollToCard(i);
+          });
+          timelineIndicators.appendChild(dot);
+        }
+        
+        // Function to scroll to a specific card - adjusted for responsive
+        function scrollToCard(index) {
+          // Check current view mode
+          isMobileView = checkMobileView();
+          
+          if (isMobileView) {
+            // Vertical scrolling for mobile
+            const cardElement = cardWrappers[index];
+            const yPosition = cardElement.offsetTop - timelineCards.offsetTop;
+            
+            timelineCards.scrollTo({
+              top: yPosition,
+              behavior: 'smooth'
+            });
+          } else {
+            // Horizontal scrolling for desktop
+            const scrollPosition = index * cardWidth + (index * 32); // Add gap
+            timelineCards.scrollTo({
+              left: scrollPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+        
+        // Set initial active card
+        let activeCardIndex = 0;
+        updateActiveCard(activeCardIndex);
+        
+        // Update active card based on scroll position
+        function updateActiveCard(index) {
+          // Remove active class from all cards
+          cardWrappers.forEach((card, i) => {
+            card.classList.remove('active', 'prev', 'next');
+            
+            // Add appropriate class based on position relative to active card
+            if (i === index) {
+              card.classList.add('active');
+            } else if (i === index - 1) {
+              card.classList.add('prev');
+            } else if (i === index + 1) {
+              card.classList.add('next');
+            }
+          });
+          
+          // Update indicator dots
+          const dots = timelineIndicators.querySelectorAll('.timeline-dot');
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+        
+        // Handle scrolling in timeline area - adjusted for responsive
+        timelineCards.addEventListener('scroll', function() {
+          // Check view mode
+          isMobileView = checkMobileView();
+          
+          if (isMobileView) {
+            // For mobile, detect which card is most visible vertically
+            let closestCard = 0;
+            let minDistance = Infinity;
+            
+            cardWrappers.forEach((card, index) => {
+              const rect = card.getBoundingClientRect();
+              const center = rect.top + (rect.height / 2);
+              const distance = Math.abs(center - window.innerHeight / 2);
+              
+              if (distance < minDistance) {
+                minDistance = distance;
+                closestCard = index;
+              }
+            });
+            
+            if (closestCard !== activeCardIndex) {
+              activeCardIndex = closestCard;
+              updateActiveCard(activeCardIndex);
+            }
+          } else {
+            // For desktop, calculate based on horizontal scroll
+            const scrollPosition = timelineCards.scrollLeft;
+            const newIndex = Math.round(scrollPosition / (cardWidth + 32)); // Add gap
+            
+            if (newIndex !== activeCardIndex && newIndex >= 0 && newIndex < totalCards) {
+              activeCardIndex = newIndex;
+              updateActiveCard(activeCardIndex);
+            }
+          }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          const wasMobile = isMobileView;
+          isMobileView = checkMobileView();
+          
+          // If view mode changed, reset scroll position to active card
+          if (wasMobile !== isMobileView) {
+            setTimeout(() => {
+              scrollToCard(activeCardIndex);
+            }, 300);
+          }
+        });
+        
+        // Mouse enter/leave for scroll focus area
+        scrollFocusArea.addEventListener('mouseenter', function() {
+          scrollFocusArea.classList.add('active');
+          timelineScrollHint.classList.add('visible');
+        });
+        
+        scrollFocusArea.addEventListener('mouseleave', function() {
+          scrollFocusArea.classList.remove('active');
+          timelineScrollHint.classList.remove('visible');
+        });
+        
+        // Control scroll behavior - adjusted for responsive
+        timelineCards.addEventListener('wheel', function(e) {
+          // Allow scrolling if mouse is over the focus area or holding shift key
+          if (scrollFocusArea.classList.contains('active') || e.shiftKey) {
+            e.preventDefault();
+            const delta = e.deltaY || e.deltaX;
+            
+            if (delta > 0 && activeCardIndex < totalCards - 1) {
+              // Scroll to next card
+              scrollToCard(activeCardIndex + 1);
+            } else if (delta < 0 && activeCardIndex > 0) {
+              // Scroll to previous card
+              scrollToCard(activeCardIndex - 1);
+            }
+          }
+        }, { passive: false });
+        
+        // Add keyboard navigation for timeline
+        document.addEventListener('keydown', function(e) {
+          if (!timelineCards) return;
+          
+          // Only apply keyboard navigation when timeline section is in viewport
+          const timelineRect = document.getElementById('timeline-section').getBoundingClientRect();
+          const isInViewport = (
+            timelineRect.top < window.innerHeight &&
+            timelineRect.bottom > 0
+          );
+          
+          if (!isInViewport) return;
+          
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (activeCardIndex < totalCards - 1) {
+              scrollToCard(activeCardIndex + 1);
+            }
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (activeCardIndex > 0) {
+              scrollToCard(activeCardIndex - 1);
+            }
+          }
+        });
+        
+        // Initialize the timeline with the first card active
+        setTimeout(() => {
+          scrollToCard(0);
+          updateActiveCard(0);
+        }, 500);
+        
+        // For mobile devices, enable touch-based interaction
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+          const cardVisuals = document.querySelectorAll('.card-visual');
+          
+          cardVisuals.forEach(visual => {
+            visual.addEventListener('touchstart', function() {
+              this.classList.add('touch-active');
+            });
+            
+            visual.addEventListener('touchend', function() {
+              this.classList.remove('touch-active');
+            });
+          });
+        }
+      }
+      
+      // Newsletter form validation
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(event) {
+          if (!newsletterForm.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            // If form is valid, you can add AJAX submission here
+            event.preventDefault();
+            
+            // Simple success message (replace with actual form submission)
+            const formControls = newsletterForm.querySelectorAll('input, button');
+            formControls.forEach(control => control.disabled = true);
+            
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'alert alert-success mt-3';
+            successMessage.innerHTML = '<strong>Thank you!</strong> You have been subscribed to our newsletter.';
+            
+            // Insert success message after form
+            newsletterForm.parentNode.insertBefore(successMessage, newsletterForm.nextSibling);
+            
+            // Scroll to success message
+            setTimeout(() => {
+              successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
+          
+          newsletterForm.classList.add('was-validated');
+        });
+      }
+    });
+  </script>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
