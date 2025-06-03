@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <style>
+    .chip-body {
+      fill: #e6dfd3;
+      stroke: #0068b5;
+      stroke-width: 2;
+    }
+    .chip-notch {
+      fill: #0068b5;
+    }
+    .connector {
+      fill: #00a291;
+      stroke: #0068b5;
+      stroke-width: 0.5;
+    }
+    .circuit-line {
+      fill: none;
+      stroke: #0068b5;
+      stroke-width: 1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .circuit-thin {
+      fill: none;
+      stroke: #00c7b1;
+      stroke-width: 0.5;
+      stroke-dasharray: 2 1;
+    }
+    .detail {
+      fill: none;
+      stroke: #00a291;
+      stroke-width: 0.8;
+    }
+    .circuit-dot {
+      fill: #0068b5;
+    }
+    .intel-text {
+      fill: #0068b5;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  </style>
+  
+  <!-- Main processor body -->
+  <rect class="chip-body" x="60" y="60" width="180" height="180" rx="5" ry="5" />
+  
+  <!-- Notch at top -->
+  <path class="chip-notch" d="M150,60 L160,50 L140,50 Z" />
+
+  <!-- Chip connectors - top row -->
+  <rect class="connector" x="75" y="60" width="10" height="5" />
+  <rect class="connector" x="95" y="60" width="10" height="5" />
+  <rect class="connector" x="115" y="60" width="10" height="5" />
+  <rect class="connector" x="135" y="60" width="10" height="5" />
+  <rect class="connector" x="155" y="60" width="10" height="5" />
+  <rect class="connector" x="175" y="60" width="10" height="5" />
+  <rect class="connector" x="195" y="60" width="10" height="5" />
+  <rect class="connector" x="215" y="60" width="10" height="5" />
+  
+  <!-- Chip connectors - bottom row -->
+  <rect class="connector" x="75" y="235" width="10" height="5" />
+  <rect class="connector" x="95" y="235" width="10" height="5" />
+  <rect class="connector" x="115" y="235" width="10" height="5" />
+  <rect class="connector" x="135" y="235" width="10" height="5" />
+  <rect class="connector" x="155" y="235" width="10" height="5" />
+  <rect class="connector" x="175" y="235" width="10" height="5" />
+  <rect class="connector" x="195" y="235" width="10" height="5" />
+  <rect class="connector" x="215" y="235" width="10" height="5" />
+  
+  <!-- Chip connectors - left column -->
+  <rect class="connector" x="60" y="75" width="5" height="10" />
+  <rect class="connector" x="60" y="95" width="5" height="10" />
+  <rect class="connector" x="60" y="115" width="5" height="10" />
+  <rect class="connector" x="60" y="135" width="5" height="10" />
+  <rect class="connector" x="60" y="155" width="5" height="10" />
+  <rect class="connector" x="60" y="175" width="5" height="10" />
+  <rect class="connector" x="60" y="195" width="5" height="10" />
+  <rect class="connector" x="60" y="215" width="5" height="10" />
+  
+  <!-- Chip connectors - right column -->
+  <rect class="connector" x="235" y="75" width="5" height="10" />
+  <rect class="connector" x="235" y="95" width="5" height="10" />
+  <rect class="connector" x="235" y="115" width="5" height="10" />
+  <rect class="connector" x="235" y="135" width="5" height="10" />
+  <rect class="connector" x="235" y="155" width="5" height="10" />
+  <rect class="connector" x="235" y="175" width="5" height="10" />
+  <rect class="connector" x="235" y="195" width="5" height="10" />
+  <rect class="connector" x="235" y="215" width="5" height="10" />
+  
+  <!-- Circuit lines -->
+  <path class="circuit-line" d="M80,100 L130,100 L130,150 L180,150 L180,200 L220,200" />
+  <path class="circuit-line" d="M80,150 L110,150 L110,180 L140,180 L140,220" />
+  <path class="circuit-line" d="M120,80 L120,120 L160,120 L160,180 L200,180 L200,220" />
+  <path class="circuit-line" d="M160,80 L160,100 L200,100 L200,130 L220,130" />
+  
+  <!-- Thinner circuit lines -->
+  <path class="circuit-thin" d="M90,90 L110,90 L110,130 L150,130 L150,170 L220,170" />
+  <path class="circuit-thin" d="M130,80 L130,110 L170,110 L170,140 L220,140" />
+  <path class="circuit-thin" d="M180,80 L180,95 L210,95 L210,110 L220,110" />
+  <path class="circuit-thin" d="M90,200 L120,200 L120,160 L140,160 L140,130 L80,130" />
+  
+  <!-- Circuit connection points -->
+  <circle class="circuit-dot" cx="130" cy="100" r="2" />
+  <circle class="circuit-dot" cx="130" cy="150" r="2" />
+  <circle class="circuit-dot" cx="180" cy="150" r="2" />
+  <circle class="circuit-dot" cx="110" cy="150" r="2" />
+  <circle class="circuit-dot" cx="110" cy="180" r="2" />
+  <circle class="circuit-dot" cx="160" cy="120" r="2" />
+  <circle class="circuit-dot" cx="160" cy="100" r="2" />
+  <circle class="circuit-dot" cx="200" cy="100" r="2" />
+  <circle class="circuit-dot" cx="110" cy="90" r="2" />
+  <circle class="circuit-dot" cx="150" cy="130" r="2" />
+  <circle class="circuit-dot" cx="170" cy="110" r="2" />
+  <circle class="circuit-dot" cx="120" cy="200" r="2" />
+  <circle class="circuit-dot" cx="140" cy="160" r="2" />
+  
+  <!-- Center processor core -->
+  <rect class="detail" x="110" y="110" width="80" height="80" rx="2" ry="2" />
+  <rect class="detail" x="120" y="120" width="60" height="60" />
+  
+  <!-- Intel text -->
+  <text class="intel-text" x="135" y="155">INTEL</text>
+</svg> 

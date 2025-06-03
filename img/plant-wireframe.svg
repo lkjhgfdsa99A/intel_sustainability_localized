@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <style>
+    .stem {
+      fill: none;
+      stroke: #00a291;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .leaf-outline {
+      fill: none;
+      stroke: #0068b5;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .leaf-vein {
+      fill: none;
+      stroke: #00c7b1;
+      stroke-width: 1;
+      stroke-linecap: round;
+      stroke-dasharray: 2 3;
+    }
+    .circle {
+      fill: none;
+      stroke: #00a291;
+      stroke-width: 1;
+      stroke-dasharray: 3 2;
+      opacity: 0.7;
+    }
+    .dot {
+      fill: #0068b5;
+      opacity: 0.5;
+    }
+  </style>
+  
+  <!-- Main stem -->
+  <path class="stem" d="M150,280 C150,250 150,220 150,190" />
+  
+  <!-- Branches -->
+  <path class="stem" d="M150,220 C160,210 170,205 180,200" />
+  <path class="stem" d="M150,240 C140,230 130,225 120,220" />
+  <path class="stem" d="M150,200 C165,190 175,180 185,170" />
+  <path class="stem" d="M150,180 C135,170 125,160 115,150" />
+  
+  <!-- Leaves -->
+  <path class="leaf-outline" d="M180,200 C200,190 220,185 230,190 C220,170 190,180 180,200" />
+  <path class="leaf-outline" d="M120,220 C100,210 80,205 70,210 C80,190 110,200 120,220" />
+  <path class="leaf-outline" d="M185,170 C205,150 225,140 240,145 C225,125 195,140 185,170" />
+  <path class="leaf-outline" d="M115,150 C95,130 75,120 60,125 C75,105 105,120 115,150" />
+  
+  <!-- Leaf veins -->
+  <path class="leaf-vein" d="M180,200 C190,195 200,192 210,190" />
+  <path class="leaf-vein" d="M120,220 C110,215 100,212 90,210" />
+  <path class="leaf-vein" d="M185,170 C195,160 205,155 215,152" />
+  <path class="leaf-vein" d="M115,150 C105,140 95,135 85,132" />
+  
+  <!-- Top flower/bud -->
+  <circle class="circle" cx="150" cy="120" r="30" />
+  <circle class="circle" cx="150" cy="120" r="20" />
+  <circle class="circle" cx="150" cy="120" r="10" />
+  
+  <!-- Decorative elements -->
+  <circle class="dot" cx="150" cy="120" r="3" />
+  <circle class="dot" cx="150" cy="280" r="3" />
+  <circle class="dot" cx="180" cy="200" r="3" />
+  <circle class="dot" cx="120" cy="220" r="3" />
+  <circle class="dot" cx="185" cy="170" r="3" />
+  <circle class="dot" cx="115" cy="150" r="3" />
+  
+  <!-- Root suggestion -->
+  <path class="leaf-vein" d="M150,280 C160,290 170,295 180,298" />
+  <path class="leaf-vein" d="M150,280 C140,290 130,295 120,298" />
+</svg> 

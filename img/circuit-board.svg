@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <style>
+    .bg {
+      fill: #e6dfd3;
+      opacity: 0.6;
+    }
+    .circuit-main {
+      fill: none;
+      stroke: #0068b5;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .circuit-secondary {
+      fill: none;
+      stroke: #00a291;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .circuit-thin {
+      fill: none;
+      stroke: #00c7b1;
+      stroke-width: 1;
+      stroke-dasharray: 3 2;
+    }
+    .connection {
+      fill: #0068b5;
+    }
+    .chip {
+      fill: #e6dfd3;
+      stroke: #0068b5;
+      stroke-width: 1;
+    }
+    .chip-detail {
+      fill: none;
+      stroke: #00a291;
+      stroke-width: 0.5;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="300" height="300" />
+  
+  <!-- Main circuit paths -->
+  <path class="circuit-main" d="M20,150 L280,150" />
+  <path class="circuit-main" d="M150,20 L150,280" />
+  <path class="circuit-main" d="M50,50 L250,250" />
+  <path class="circuit-main" d="M50,250 L250,50" />
+  
+  <!-- Secondary circuit paths - horizontal -->
+  <path class="circuit-secondary" d="M20,100 L280,100" />
+  <path class="circuit-secondary" d="M20,200 L280,200" />
+  
+  <!-- Secondary circuit paths - vertical -->
+  <path class="circuit-secondary" d="M100,20 L100,280" />
+  <path class="circuit-secondary" d="M200,20 L200,280" />
+  
+  <!-- Thin circuit paths -->
+  <path class="circuit-thin" d="M20,50 L280,50" />
+  <path class="circuit-thin" d="M20,250 L280,250" />
+  <path class="circuit-thin" d="M50,20 L50,280" />
+  <path class="circuit-thin" d="M250,20 L250,280" />
+  
+  <!-- Connection points -->
+  <circle class="connection" cx="50" cy="50" r="4" />
+  <circle class="connection" cx="50" cy="100" r="4" />
+  <circle class="connection" cx="50" cy="150" r="4" />
+  <circle class="connection" cx="50" cy="200" r="4" />
+  <circle class="connection" cx="50" cy="250" r="4" />
+  
+  <circle class="connection" cx="100" cy="50" r="4" />
+  <circle class="connection" cx="100" cy="100" r="4" />
+  <circle class="connection" cx="100" cy="150" r="4" />
+  <circle class="connection" cx="100" cy="200" r="4" />
+  <circle class="connection" cx="100" cy="250" r="4" />
+  
+  <circle class="connection" cx="150" cy="50" r="4" />
+  <circle class="connection" cx="150" cy="100" r="4" />
+  <circle class="connection" cx="150" cy="150" r="4" />
+  <circle class="connection" cx="150" cy="200" r="4" />
+  <circle class="connection" cx="150" cy="250" r="4" />
+  
+  <circle class="connection" cx="200" cy="50" r="4" />
+  <circle class="connection" cx="200" cy="100" r="4" />
+  <circle class="connection" cx="200" cy="150" r="4" />
+  <circle class="connection" cx="200" cy="200" r="4" />
+  <circle class="connection" cx="200" cy="250" r="4" />
+  
+  <circle class="connection" cx="250" cy="50" r="4" />
+  <circle class="connection" cx="250" cy="100" r="4" />
+  <circle class="connection" cx="250" cy="150" r="4" />
+  <circle class="connection" cx="250" cy="200" r="4" />
+  <circle class="connection" cx="250" cy="250" r="4" />
+  
+  <!-- Chip-like components -->
+  <!-- Component 1 -->
+  <rect class="chip" x="80" y="80" width="40" height="40" rx="2" ry="2" />
+  <rect class="chip-detail" x="85" y="85" width="30" height="30" />
+  <line class="chip-detail" x1="85" y1="95" x2="115" y2="95" />
+  <line class="chip-detail" x1="85" y1="105" x2="115" y2="105" />
+  
+  <!-- Component 2 -->
+  <rect class="chip" x="180" y="80" width="40" height="40" rx="2" ry="2" />
+  <rect class="chip-detail" x="185" y="85" width="30" height="30" />
+  <circle class="chip-detail" cx="200" cy="100" r="10" />
+  
+  <!-- Component 3 -->
+  <rect class="chip" x="80" y="180" width="40" height="40" rx="2" ry="2" />
+  <rect class="chip-detail" x="85" y="185" width="30" height="30" />
+  <path class="chip-detail" d="M85,185 L115,215 M85,215 L115,185" />
+  
+  <!-- Component 4 -->
+  <rect class="chip" x="180" y="180" width="40" height="40" rx="2" ry="2" />
+  <rect class="chip-detail" x="185" y="185" width="30" height="30" />
+  <path class="chip-detail" d="M185,200 L215,200 M200,185 L200,215" />
+</svg> 
