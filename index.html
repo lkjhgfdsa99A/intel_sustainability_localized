@@ -18,25 +18,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- Language Switcher Script -->
-  <script>
-    // Function to toggle between LTR and RTL
-    function toggleDirection() {
-      const html = document.documentElement;
-      if (html.getAttribute('dir') === 'ltr') {
-        html.setAttribute('dir', 'rtl');
-        html.classList.remove('ltr');
-        html.classList.add('rtl');
-        document.getElementById('dirToggle').textContent = 'Switch to LTR';
-      } else {
-        html.setAttribute('dir', 'ltr');
-        html.classList.remove('rtl');
-        html.classList.add('ltr');
-        document.getElementById('dirToggle').textContent = 'Switch to RTL';
-      }
-    }
-  </script>
 </head>
 <body>
   <!-- Skip to Content Link -->
@@ -54,14 +35,6 @@
     </div>
   </div>
 
-  <!-- Intel Corner Logo -->
-  <a href="#hero-section">
-    <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="corner-logo active" id="corner-logo" />
-  </a>
-
-  <!-- Language/Direction Switcher -->
-  <button id="dirToggle" class="dir-toggle btn" onclick="toggleDirection()">Switch to RTL</button>
-
   <!-- Header / Hero Section -->
   <header class="hero container-fluid" id="hero-section">
     <!-- Hero background -->
@@ -73,13 +46,13 @@
       <div class="floating-element parallax-tech" data-speed="0.06" style="top: 65%; left: 75%;">
         <div class="eco-icon">🌱</div>
       </div>
-      <div class="floating-element parallax-tech" data-speed="0.1" style="top: 22%; left: 82%;">
+      <div class="floating-element parallax-tech" data-speed="0.1" style="top: 45%; left: 90%;">
         <div class="eco-icon">🍃</div>
       </div>
       <div class="floating-element parallax-tech" data-speed="0.07" style="top: 78%; left: 15%;">
         <div class="eco-icon">🌎</div>
       </div>
-      <div class="floating-element parallax-tech" data-speed="0.09" style="top: 35%; left: 45%;">
+      <div class="floating-element parallax-tech" data-speed="0.09" style="top: 35%; left: 70%;">
         <div class="eco-icon">💧</div>
       </div>
     </div>
@@ -93,7 +66,9 @@
       <div class="col-lg-10">
         <!-- Intel logo -->
         <div class="intel-logo-container">
-          <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="intel-logo" />
+          <a href="#hero-section">
+            <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="intel-logo" />
+          </a>
         </div>
         
         <!-- Large hero title with animation -->
@@ -237,8 +212,8 @@
       <h2 class="section-title text-center mb-3">Intel's Sustainability Journey</h2>
       
       <!-- Horizontal Timeline Instructions - Modified -->
-      <div class="timeline-instructions text-center mb-4">
-        <small class="d-block text-muted"><i class="bi bi-info-circle"></i> Hold <kbd>Shift</kbd> + scroll to navigate the timeline</small>
+      <div class="timeline-instructions text-center mb-4 d-flex justify-content-center w-100">
+        <small class="d-block text-muted"><i class="bi bi-info-circle"></i> Hold <kbd>Shift</kbd> + scroll to navigate the timeline or use <kbd>←</kbd> <kbd>→</kbd> arrow keys</small>
       </div>
       
       <!-- Timeline Background Text -->
@@ -265,7 +240,7 @@
           
           <!-- Card 1: 1968 -->
           <div class="timeline-card-wrapper" data-index="0">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal1968">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -289,7 +264,7 @@
 
           <!-- Card 2: 1971 -->
           <div class="timeline-card-wrapper" data-index="1">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal1971">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -313,7 +288,7 @@
 
           <!-- Card 3: 1978 -->
           <div class="timeline-card-wrapper" data-index="2">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal1978">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -336,7 +311,7 @@
 
           <!-- Card 4: 1985 -->
           <div class="timeline-card-wrapper" data-index="3">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal1985">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -359,7 +334,7 @@
 
           <!-- Card 5: 2008 -->
           <div class="timeline-card-wrapper" data-index="4">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal2008">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -382,7 +357,7 @@
 
           <!-- Card 6: 2012 -->
           <div class="timeline-card-wrapper" data-index="5">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal2012">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -405,7 +380,7 @@
 
           <!-- Card 7: 2019 -->
           <div class="timeline-card-wrapper" data-index="6">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal2019">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -428,7 +403,7 @@
 
           <!-- Card 8: 2022 -->
           <div class="timeline-card-wrapper" data-index="7">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal2022">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -451,7 +426,7 @@
 
           <!-- Card 9: 2023 -->
           <div class="timeline-card-wrapper" data-index="8">
-            <div class="milestone-card">
+            <div class="milestone-card" data-bs-toggle="modal" data-bs-target="#timelineModal2023">
               <div class="card-bg"></div>
               <div class="card-content d-flex flex-column">
                 <div class="card-info">
@@ -478,6 +453,319 @@
       </div>
     </section>
 
+    <!-- Timeline Modals -->
+    <!-- 1968 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal1968" tabindex="-1" aria-labelledby="timelineModalLabel1968" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel1968">1968: Intel Founded</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/1.jpg" alt="Intel founders Robert Noyce and Gordon Moore in 1968" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>The Birth of Intel</h4>
+                <p>On July 18, 1968, Robert Noyce and Gordon Moore, two former Fairchild Semiconductor employees, founded Intel Corporation (originally named N M Electronics). The name "Intel" was derived from the words "integrated" and "electronics."</p>
+                <p>With initial funding of $2.5 million, Intel set up its first headquarters in Mountain View, California, before later moving to Santa Clara.</p>
+                <h5>Key Founders:</h5>
+                <ul>
+                  <li><strong>Robert Noyce</strong> - Co-inventor of the integrated circuit</li>
+                  <li><strong>Gordon Moore</strong> - Known for "Moore's Law" (the observation that the number of transistors on a chip doubles approximately every two years)</li>
+                  <li><strong>Andy Grove</strong> - Joined shortly after founding and later became CEO</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1971 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal1971" tabindex="-1" aria-labelledby="timelineModalLabel1971" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel1971">1971: First Microprocessor</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/2.jpg" alt="Intel 4004 microprocessor, the world's first commercial microprocessor, released in 1971" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>The 4004 Microprocessor</h4>
+                <p>In November 1971, Intel created history by introducing the 4004, the world's first commercially available microprocessor. This revolutionary 4-bit central processing unit (CPU) consolidated the computer's processing unit onto a single chip.</p>
+                <p>Originally designed for a Japanese calculator company called Busicom, the 4004 contained 2,300 transistors and could perform about 60,000 operations per second—a groundbreaking achievement for its time.</p>
+                <h5>Key Features:</h5>
+                <ul>
+                  <li>4-bit processor</li>
+                  <li>Clock speed: 108 KHz</li>
+                  <li>2,300 transistors using 10μm technology</li>
+                  <li>Instruction cycle time: 10.8 microseconds</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1978 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal1978" tabindex="-1" aria-labelledby="timelineModalLabel1978" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel1978">1978: 8086 Processor</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/3.jpg" alt="Intel 8086 processor released in 1978, establishing the x86 architecture" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>The 8086 Microprocessor</h4>
+                <p>In 1978, Intel released the 8086 microprocessor, a 16-bit CPU that would establish the x86 architecture—the foundation for decades of processor development to follow.</p>
+                <p>When IBM selected the 8088 (a variant of the 8086) for its first personal computer in 1981, it set the stage for Intel's dominance in the PC market and established the x86 instruction set as the industry standard.</p>
+                <h5>Key Features:</h5>
+                <ul>
+                  <li>16-bit processor</li>
+                  <li>Clock speeds: 4.77 MHz to 10 MHz</li>
+                  <li>29,000 transistors using 3μm technology</li>
+                  <li>1MB addressable memory</li>
+                  <li>Established the foundation for modern computing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1985 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal1985" tabindex="-1" aria-labelledby="timelineModalLabel1985" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel1985">1985: 386 Processor</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/4.jpg" alt="Intel 386 processor from 1985, introducing 32-bit computing" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>The 386 Processor</h4>
+                <p>In 1985, Intel introduced the 386 processor (officially the 80386), the first 32-bit x86 microprocessor. This groundbreaking chip revolutionized personal computing by enabling multitasking operating systems and addressing significantly more memory than its predecessors.</p>
+                <p>The 386 was a critical advancement that enabled the development of more sophisticated software, including Microsoft Windows, which required 32-bit processing capabilities.</p>
+                <h5>Key Features:</h5>
+                <ul>
+                  <li>32-bit architecture</li>
+                  <li>275,000 transistors</li>
+                  <li>Could address up to 4GB of memory</li>
+                  <li>Clock speeds from 16MHz to 33MHz</li>
+                  <li>Built-in memory management and protected mode</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2008 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal2008" tabindex="-1" aria-labelledby="timelineModalLabel2008" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel2008">2008: Sustainability Summit</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/sustainability-summit.png" alt="Intel Sustainability Summit in 2008, gathering industry leaders for environmental initiatives" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>Intel's First Sustainability Summit</h4>
+                <p>In 2008, Intel hosted its first Sustainability Summit, bringing together industry leaders, policymakers, and environmental experts to address the growing challenges of climate change and environmental sustainability in the technology sector.</p>
+                <p>This marked a significant shift in Intel's corporate focus, putting sustainability at the forefront of its business strategy and innovation efforts.</p>
+                <h5>Key Outcomes:</h5>
+                <ul>
+                  <li>Establishment of Intel's first comprehensive environmental goals</li>
+                  <li>Commitment to reduce water usage and greenhouse gas emissions</li>
+                  <li>Industry collaboration on sustainable practices</li>
+                  <li>Development of more energy-efficient processors</li>
+                  <li>Launch of several initiatives to improve supply chain sustainability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2012 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal2012" tabindex="-1" aria-labelledby="timelineModalLabel2012" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel2012">2012: Renewable Electricity Initiative</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/renewable-electricity.png" alt="Intel's 2012 renewable electricity initiative, becoming the largest voluntary corporate purchaser of green power" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>Leading in Renewable Energy</h4>
+                <p>In 2012, Intel became the largest voluntary corporate purchaser of green power in the United States according to the U.S. EPA. The company committed to sourcing 100% of its electricity from renewable sources across its U.S. and European operations.</p>
+                <p>This milestone represented a major investment in wind, solar, hydro, and biomass electricity generation, significantly reducing Intel's carbon footprint.</p>
+                <h5>Key Achievements:</h5>
+                <ul>
+                  <li>Purchased more than 3.1 billion kWh of green power annually</li>
+                  <li>Installed solar panels at multiple Intel campuses</li>
+                  <li>Reduced carbon emissions by approximately 2.6 million metric tons</li>
+                  <li>Received EPA Green Power Partner of the Year award</li>
+                  <li>Invested in over 70 on-site renewable energy projects</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2019 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal2019" tabindex="-1" aria-labelledby="timelineModalLabel2019" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel2019">2019: RISE Strategy</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/RISE-Strategy.png" alt="Intel's RISE (Responsible, Inclusive, Sustainable, Enabling) Strategy launched in 2019" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>RISE: A New Corporate Strategy</h4>
+                <p>In 2019, Intel launched its RISE strategy (Responsible, Inclusive, Sustainable, Enabling), establishing a comprehensive framework for corporate responsibility and environmental stewardship through 2030.</p>
+                <p>This strategic initiative represents Intel's holistic approach to creating a more sustainable and inclusive technology industry while addressing global environmental challenges.</p>
+                <h5>Key Components:</h5>
+                <ul>
+                  <li><strong>Responsible Business:</strong> Ethical conduct, supply chain management, and human rights</li>
+                  <li><strong>Inclusive Workplace:</strong> Promoting diversity and inclusion within Intel and the tech industry</li>
+                  <li><strong>Sustainable Operations:</strong> Minimizing environmental impact in manufacturing and operations</li>
+                  <li><strong>Enabling Technology:</strong> Creating technology solutions that address global sustainability challenges</li>
+                </ul>
+                <p>The RISE strategy set ambitious 2030 goals, including net positive water use, 100% renewable electricity, and zero waste to landfills across Intel's global operations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2022 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal2022" tabindex="-1" aria-labelledby="timelineModalLabel2022" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel2022">2022: Net Zero Commitment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/net-zero.png" alt="Intel's 2022 Net Zero commitment for achieving net positive water use and 100% renewable electricity" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>Net Zero Greenhouse Gas Emissions</h4>
+                <p>In 2022, Intel announced its commitment to achieve net-zero greenhouse gas emissions across its global operations by 2040. This ambitious pledge builds on the company's 2030 RISE goals and represents a significant escalation in Intel's climate action strategy.</p>
+                <p>The net zero roadmap includes interim milestones and concrete actions to dramatically reduce Intel's direct and indirect carbon emissions.</p>
+                <h5>Key Commitments:</h5>
+                <ul>
+                  <li>Achieve 100% renewable electricity use across global operations</li>
+                  <li>Invest $300 million in energy conservation projects</li>
+                  <li>Build new factories and facilities to meet U.S. Green Building Council LEED program standards</li>
+                  <li>Work with suppliers to identify greenhouse gas reduction opportunities</li>
+                  <li>Develop more sustainable and energy-efficient products</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023 Modal -->
+    <div class="modal fade timeline-modal" id="timelineModal2023" tabindex="-1" aria-labelledby="timelineModalLabel2023" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="timelineModalLabel2023">2023: GHG Emissions Reduction</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/GHG-Emissions.png" alt="Intel's 2023 greenhouse gas emissions reduction achievement of 39% since 2019" class="img-fluid rounded mb-3" />
+              </div>
+              <div class="col-md-6">
+                <h4>Significant Progress in Emissions Reduction</h4>
+                <p>In 2023, Intel reported a substantial 39% reduction in Scope 1 and 2 greenhouse gas emissions compared to 2019 levels. This achievement marks significant progress toward Intel's 2030 environmental goals and its larger commitment to achieve net-zero greenhouse gas emissions by 2040.</p>
+                <p>The reduction was accomplished through a combination of energy efficiency measures, renewable energy investments, and innovative approaches to manufacturing processes.</p>
+                <h5>Key Achievements:</h5>
+                <ul>
+                  <li>Implementation of advanced abatement systems for manufacturing emissions</li>
+                  <li>Expansion of on-site renewable energy generation</li>
+                  <li>Energy-efficient building upgrades across Intel campuses</li>
+                  <li>New power purchase agreements for renewable electricity</li>
+                  <li>Development of more energy-efficient chip manufacturing technologies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Newsletter Subscription Section -->
     <section class="newsletter-section container-fluid" id="newsletter-section">
       <!-- Background elements -->
@@ -500,8 +788,8 @@
               </p>
               
               <form class="newsletter-form needs-validation" novalidate aria-labelledby="newsletter-title">
-                <div class="row g-3 justify-content-center">
-                  <div class="col-md-6 col-lg-5">
+                <div class="row g-2 justify-content-center">
+                  <div class="col-md-7 col-lg-7">
                     <div class="form-floating">
                       <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required aria-describedby="emailInputHelp">
                       <label for="emailInput">Email address</label>
@@ -510,11 +798,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3 col-lg-2 d-grid">
+                  <div class="col-md-3 col-lg-3 d-grid">
                     <button type="submit" class="btn btn-subscribe" aria-label="Subscribe to newsletter">Subscribe</button>
                   </div>
                 </div>
-                <div class="form-check mt-3 d-inline-block">
+                <div class="form-check mt-2 d-inline-block">
                   <input class="form-check-input" type="checkbox" value="" id="privacyCheck" required aria-describedby="privacyHelp">
                   <label class="form-check-label" for="privacyCheck">
                     I agree to Intel's <a href="#" class="privacy-link">privacy policy</a>
@@ -530,12 +818,6 @@
                 <div class="float-element element-1">
                   <i class="bi bi-envelope-paper"></i>
                 </div>
-                <div class="float-element element-2">
-                  <i class="bi bi-arrow-repeat"></i>
-                </div>
-                <div class="float-element element-3">
-                  <i class="bi bi-leaf"></i>
-                </div>
                 <div class="float-element element-4">
                   <i class="bi bi-lightbulb"></i>
                 </div>
@@ -548,28 +830,28 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer py-5">
+  <footer class="site-footer py-3">
     <div class="footer-content container">
       <div class="row justify-content-center">
         <div class="col-md-6 text-center">
-          <div class="footer-logo mb-4">
-            <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="img-fluid" style="max-width: 120px;" />
+          <div class="footer-logo">
+            <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="img-fluid" style="max-width: 70px;" />
           </div>
           <div class="footer-text">
             <p>Intel's commitment to sustainability continues to evolve as we innovate for a better tomorrow.</p>
-            <p class="mb-3">© 2024 Intel Corporation. All rights reserved.</p>
+            <p class="mb-1">© 2024 Intel Corporation. All rights reserved.</p>
           </div>
         </div>
       </div>
       
       <!-- Footer Navigation -->
-      <div class="row mt-4">
+      <div class="row">
         <div class="col-12">
           <nav class="footer-nav text-center">
             <ul class="list-inline mb-0">
-              <li class="list-inline-item"><a href="#" class="footer-link">Privacy Policy</a></li>
-              <li class="list-inline-item"><a href="#" class="footer-link">Terms of Use</a></li>
-              <li class="list-inline-item"><a href="#" class="footer-link">Contact Us</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Privacy</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Terms</a></li>
+              <li class="list-inline-item"><a href="#" class="footer-link">Contact</a></li>
               <li class="list-inline-item"><a href="#" class="footer-link">Accessibility</a></li>
               <li class="list-inline-item"><a href="#" class="footer-link">Sustainability Report</a></li>
             </ul>
@@ -593,6 +875,43 @@
       const timelineScrollHint = document.getElementById('timeline-scroll-hint');
       const timelineIndicators = document.getElementById('timeline-indicators');
       const newsletterForm = document.querySelector('.newsletter-form');
+      const intelLogo = document.querySelector('.intel-logo-container');
+      const htmlElement = document.documentElement;
+      
+      // Language and RTL auto-detection
+      function detectLanguageAndDirection() {
+        // Get user's browser language
+        const userLanguage = navigator.language || navigator.userLanguage;
+        console.log("Detected language:", userLanguage);
+        
+        // RTL languages list
+        const rtlLanguages = ['ar', 'he', 'fa', 'ur', 'ar-SA', 'ar-AE', 'ar-QA', 'he-IL', 'fa-IR', 'ur-PK'];
+        
+        // Check if user's language is RTL
+        const isRTL = rtlLanguages.some(lang => userLanguage.startsWith(lang));
+        
+        // Apply RTL if needed
+        if (isRTL) {
+          htmlElement.setAttribute('dir', 'rtl');
+          htmlElement.classList.remove('ltr');
+          htmlElement.classList.add('rtl');
+          console.log("Applied RTL direction");
+        } else {
+          htmlElement.setAttribute('dir', 'ltr');
+          htmlElement.classList.remove('rtl');
+          htmlElement.classList.add('ltr');
+          console.log("Applied LTR direction");
+        }
+      }
+      
+      // Run detection on page load
+      detectLanguageAndDirection();
+      
+      // Initialize Bootstrap modals
+      const timelineModals = document.querySelectorAll('.timeline-modal');
+      timelineModals.forEach(modal => {
+        new bootstrap.Modal(modal);
+      });
       
       // Hide loading screen after a short delay
       setTimeout(() => {
@@ -609,6 +928,21 @@
           cursorFollower.style.top = e.clientY + 'px';
         }, 80);
       });
+      
+      // Intel logo scroll behavior
+      if (intelLogo) {
+        window.addEventListener('scroll', function() {
+          const scrollY = window.pageYOffset;
+          const heroHeight = document.querySelector('.hero').offsetHeight;
+          
+          // When scrolled past 10% of hero section
+          if (scrollY > heroHeight * 0.1) {
+            intelLogo.classList.add('intel-logo-fixed');
+          } else {
+            intelLogo.classList.remove('intel-logo-fixed');
+          }
+        });
+      }
       
       // Simple parallax effect for tech elements
       const parallaxElements = document.querySelectorAll('.parallax-tech');
@@ -634,111 +968,192 @@
         const cardWidth = 400; // Card width in pixels
         const totalCards = cardWrappers.length;
         let isMobileView = window.innerWidth <= 768;
+        let activeCardIndex = 0;
+        
+        console.log(`Timeline initialized with ${totalCards} cards`);
         
         // Function to check if we're in mobile view
         function checkMobileView() {
           return window.innerWidth <= 768;
         }
         
-        // Create indicator dots
+        // Function to check direction mode (RTL or LTR)
+        function isRTLMode() {
+          return document.documentElement.getAttribute('dir') === 'rtl';
+        }
+        
+        // Create indicator dots with direct navigation
         for (let i = 0; i < totalCards; i++) {
           const dot = document.createElement('div');
           dot.classList.add('timeline-dot');
           dot.setAttribute('data-index', i);
-          dot.addEventListener('click', () => {
-            scrollToCard(i);
+          
+          // Direct click handler - simpler and more reliable
+          dot.addEventListener('click', function() {
+            navigateToCard(i);
           });
+          
           timelineIndicators.appendChild(dot);
         }
         
-        // Function to scroll to a specific card - adjusted for responsive
-        function scrollToCard(index) {
-          // Check current view mode
-          isMobileView = checkMobileView();
+        // New simplified navigation function that handles all scrolling
+        function navigateToCard(index) {
+          // Validate index
+          if (index < 0) index = 0;
+          if (index >= totalCards) index = totalCards - 1;
           
-          if (isMobileView) {
-            // Vertical scrolling for mobile
-            const cardElement = cardWrappers[index];
-            const yPosition = cardElement.offsetTop - timelineCards.offsetTop;
-            
+          // Update active index
+          activeCardIndex = index;
+          
+          // Update classes on cards
+          cardWrappers.forEach((card, i) => {
+            card.classList.remove('active', 'prev', 'next');
+            if (i === index) card.classList.add('active');
+            else if (i === index - 1) card.classList.add('prev');
+            else if (i === index + 1) card.classList.add('next');
+          });
+          
+          // Update dots
+          const dots = timelineIndicators.querySelectorAll('.timeline-dot');
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+          });
+          
+          // Perform scroll
+          const isMobile = checkMobileView();
+          const isRTL = isRTLMode();
+          
+          if (isMobile) {
+            // Mobile (vertical) scroll
+            const target = cardWrappers[index];
+            const offset = target.offsetTop - timelineCards.offsetTop;
             timelineCards.scrollTo({
-              top: yPosition,
+              top: offset,
               behavior: 'smooth'
             });
           } else {
-            // Horizontal scrolling for desktop
-            const scrollPosition = index * cardWidth + (index * 32); // Add gap
-            timelineCards.scrollTo({
-              left: scrollPosition,
-              behavior: 'smooth'
-            });
+            // Desktop (horizontal) scroll
+            // Calculate exact position for the card - allow for the gap
+            const gapSize = 32; // gap between cards
+            const position = index * (cardWidth + gapSize);
+            
+            console.log(`Scrolling to card ${index}, position ${position}px, RTL: ${isRTL}`);
+            
+            if (isRTL) {
+              // For RTL mode, calculate the correct scroll position differently
+              // In RTL, scrollLeft is reversed - max scroll on the left, 0 on the right
+              const containerWidth = timelineCards.clientWidth;
+              const scrollAreaWidth = timelineCards.scrollWidth;
+              const maxScroll = scrollAreaWidth - containerWidth;
+              
+              // RTL positioning: the max scroll position minus the target card's position from the end
+              const rtlPosition = maxScroll - ((totalCards - 1 - index) * (cardWidth + gapSize));
+              
+              // Apply scroll with smooth behavior
+              timelineCards.scrollTo({
+                left: Math.max(0, rtlPosition),
+                behavior: 'smooth'
+              });
+              
+              // Ensure scroll position is set correctly by directly updating scrollLeft as backup
+              setTimeout(() => {
+                timelineCards.scrollLeft = Math.max(0, rtlPosition);
+                console.log(`RTL scroll applied: ${rtlPosition}px`);
+              }, 50);
+            } else {
+              // Normal LTR scrolling
+              timelineCards.scrollTo({
+                left: position,
+                behavior: 'smooth'
+              });
+              
+              // Ensure scroll position as backup
+              setTimeout(() => {
+                timelineCards.scrollLeft = position;
+              }, 50);
+            }
           }
         }
         
-        // Set initial active card
-        let activeCardIndex = 0;
-        updateActiveCard(activeCardIndex);
-        
-        // Update active card based on scroll position
-        function updateActiveCard(index) {
-          // Remove active class from all cards
-          cardWrappers.forEach((card, i) => {
-            card.classList.remove('active', 'prev', 'next');
-            
-            // Add appropriate class based on position relative to active card
-            if (i === index) {
-              card.classList.add('active');
-            } else if (i === index - 1) {
-              card.classList.add('prev');
-            } else if (i === index + 1) {
-              card.classList.add('next');
-            }
-          });
-          
-          // Update indicator dots
-          const dots = timelineIndicators.querySelectorAll('.timeline-dot');
-          dots.forEach((dot, i) => {
-            if (i === index) {
-              dot.classList.add('active');
-            } else {
-              dot.classList.remove('active');
-            }
-          });
-        }
-        
-        // Handle scrolling in timeline area - adjusted for responsive
+        // Handle scrolling detection in timeline
         timelineCards.addEventListener('scroll', function() {
-          // Check view mode
-          isMobileView = checkMobileView();
-          
-          if (isMobileView) {
-            // For mobile, detect which card is most visible vertically
-            let closestCard = 0;
-            let minDistance = Infinity;
+          if (checkMobileView()) {
+            // Mobile scroll detection - unchanged
+            let bestMatch = 0;
+            let bestDistance = Infinity;
             
-            cardWrappers.forEach((card, index) => {
+            cardWrappers.forEach((card, i) => {
               const rect = card.getBoundingClientRect();
-              const center = rect.top + (rect.height / 2);
-              const distance = Math.abs(center - window.innerHeight / 2);
+              const cardCenter = rect.top + rect.height / 2;
+              const viewCenter = window.innerHeight / 2;
+              const distance = Math.abs(cardCenter - viewCenter);
               
-              if (distance < minDistance) {
-                minDistance = distance;
-                closestCard = index;
+              if (distance < bestDistance) {
+                bestDistance = distance;
+                bestMatch = i;
               }
             });
             
-            if (closestCard !== activeCardIndex) {
-              activeCardIndex = closestCard;
-              updateActiveCard(activeCardIndex);
+            if (bestMatch !== activeCardIndex) {
+              activeCardIndex = bestMatch;
+              
+              // Update only the UI, not scrolling again
+              cardWrappers.forEach((card, i) => {
+                card.classList.remove('active', 'prev', 'next');
+                if (i === activeCardIndex) card.classList.add('active');
+                else if (i === activeCardIndex - 1) card.classList.add('prev');
+                else if (i === activeCardIndex + 1) card.classList.add('next');
+              });
+              
+              const dots = timelineIndicators.querySelectorAll('.timeline-dot');
+              dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeCardIndex);
+              });
             }
           } else {
-            // For desktop, calculate based on horizontal scroll
-            const scrollPosition = timelineCards.scrollLeft;
-            const newIndex = Math.round(scrollPosition / (cardWidth + 32)); // Add gap
+            // Desktop scroll detection - improved for RTL
+            const isRTL = isRTLMode();
+            const scrollPos = timelineCards.scrollLeft;
+            const gapSize = 32;
+            const cardUnit = cardWidth + gapSize;
+            let estimatedIndex;
             
-            if (newIndex !== activeCardIndex && newIndex >= 0 && newIndex < totalCards) {
-              activeCardIndex = newIndex;
-              updateActiveCard(activeCardIndex);
+            if (isRTL) {
+              // RTL scroll position calculation - improved
+              const containerWidth = timelineCards.clientWidth;
+              const scrollAreaWidth = timelineCards.scrollWidth;
+              const maxScroll = scrollAreaWidth - containerWidth;
+              
+              // Calculate how far we've scrolled from the end
+              const distanceFromEnd = maxScroll - scrollPos;
+              
+              // Convert to card index (from right to left in RTL mode)
+              estimatedIndex = Math.round(distanceFromEnd / cardUnit);
+              
+              // Ensure within valid range and invert for RTL
+              estimatedIndex = Math.min(Math.max(0, estimatedIndex), totalCards - 1);
+              console.log(`RTL scroll detection: scrollPos=${scrollPos}, distanceFromEnd=${distanceFromEnd}, estimated=${estimatedIndex}`);
+            } else {
+              // LTR scroll position calculation
+              estimatedIndex = Math.round(scrollPos / cardUnit);
+              estimatedIndex = Math.min(Math.max(0, estimatedIndex), totalCards - 1);
+            }
+            
+            if (estimatedIndex !== activeCardIndex) {
+              activeCardIndex = estimatedIndex;
+              
+              // Update only the UI, not scrolling again
+              cardWrappers.forEach((card, i) => {
+                card.classList.remove('active', 'prev', 'next');
+                if (i === activeCardIndex) card.classList.add('active');
+                else if (i === activeCardIndex - 1) card.classList.add('prev');
+                else if (i === activeCardIndex + 1) card.classList.add('next');
+              });
+              
+              const dots = timelineIndicators.querySelectorAll('.timeline-dot');
+              dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeCardIndex);
+              });
             }
           }
         });
@@ -751,7 +1166,7 @@
           // If view mode changed, reset scroll position to active card
           if (wasMobile !== isMobileView) {
             setTimeout(() => {
-              scrollToCard(activeCardIndex);
+              navigateToCard(activeCardIndex);
             }, 300);
           }
         });
@@ -759,27 +1174,34 @@
         // Mouse enter/leave for scroll focus area
         scrollFocusArea.addEventListener('mouseenter', function() {
           scrollFocusArea.classList.add('active');
-          timelineScrollHint.classList.add('visible');
+          if (timelineScrollHint) timelineScrollHint.classList.add('visible');
         });
         
         scrollFocusArea.addEventListener('mouseleave', function() {
           scrollFocusArea.classList.remove('active');
-          timelineScrollHint.classList.remove('visible');
+          if (timelineScrollHint) timelineScrollHint.classList.remove('visible');
         });
         
-        // Control scroll behavior - adjusted for responsive
+        // Control scroll behavior with mouse wheel
         timelineCards.addEventListener('wheel', function(e) {
           // Allow scrolling if mouse is over the focus area or holding shift key
           if (scrollFocusArea.classList.contains('active') || e.shiftKey) {
             e.preventDefault();
             const delta = e.deltaY || e.deltaX;
+            const isRTL = isRTLMode();
             
-            if (delta > 0 && activeCardIndex < totalCards - 1) {
+            // In RTL mode, reverse the scroll direction for intuitive behavior
+            let scrollDirection = delta;
+            if (isRTL) {
+              scrollDirection = -delta;
+            }
+            
+            if (scrollDirection > 0 && activeCardIndex < totalCards - 1) {
               // Scroll to next card
-              scrollToCard(activeCardIndex + 1);
-            } else if (delta < 0 && activeCardIndex > 0) {
+              navigateToCard(activeCardIndex + 1);
+            } else if (scrollDirection < 0 && activeCardIndex > 0) {
               // Scroll to previous card
-              scrollToCard(activeCardIndex - 1);
+              navigateToCard(activeCardIndex - 1);
             }
           }
         }, { passive: false });
@@ -797,23 +1219,115 @@
           
           if (!isInViewport) return;
           
-          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            e.preventDefault();
-            if (activeCardIndex < totalCards - 1) {
-              scrollToCard(activeCardIndex + 1);
+          const isRTL = isRTLMode();
+          
+          // Process arrow key navigation
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault(); // Prevent default scrolling behavior
+            
+            let newIndex;
+            
+            // In RTL mode, the direction is reversed
+            if (isRTL) {
+              if (e.key === 'ArrowLeft') {
+                // Go forward in RTL
+                newIndex = Math.min(totalCards - 1, activeCardIndex + 1);
+              } else {
+                // Go backward in RTL
+                newIndex = Math.max(0, activeCardIndex - 1);
+              }
+            } else {
+              // LTR navigation
+              if (e.key === 'ArrowRight') {
+                // Go forward in LTR
+                newIndex = Math.min(totalCards - 1, activeCardIndex + 1);
+              } else {
+                // Go backward in LTR
+                newIndex = Math.max(0, activeCardIndex - 1);
+              }
             }
-          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            if (activeCardIndex > 0) {
-              scrollToCard(activeCardIndex - 1);
+            
+            // Only navigate if the index has changed
+            if (newIndex !== activeCardIndex) {
+              console.log(`Keyboard navigation: ${e.key}, newIndex: ${newIndex}, RTL: ${isRTL}`);
+              navigateToCard(newIndex);
             }
           }
         });
         
-        // Initialize the timeline with the first card active
+        // Special function to ensure we can reach the last card
+        function testLastCardAccess() {
+          console.log("Testing last card access...");
+          
+          // Navigate to the last card
+          const lastIndex = totalCards - 1;
+          navigateToCard(lastIndex);
+          
+          // Then back to the first after a delay
+          setTimeout(() => {
+            navigateToCard(0);
+            console.log("Last card test complete");
+          }, 1500);
+        }
+        
+        // Initialize the timeline
         setTimeout(() => {
-          scrollToCard(0);
-          updateActiveCard(0);
+          console.log('Initializing timeline to first card');
+          navigateToCard(0);
+          
+          // Test last card access after initial setup
+          setTimeout(() => {
+            // Make sure all dots are properly set up
+            const dots = timelineIndicators.querySelectorAll('.timeline-dot');
+            
+            // Improved click handler for all dots (including last dot)
+            dots.forEach((dot, i) => {
+              // Remove any existing listeners to avoid duplicates
+              const newDot = dot.cloneNode(true);
+              dot.parentNode.replaceChild(newDot, dot);
+              
+              // Add stronger, more reliable click handler
+              newDot.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log(`Dot ${i} clicked`);
+                
+                // Force immediate class updates for better visual feedback
+                dots.forEach((d, idx) => {
+                  d.classList.toggle('active', idx === i);
+                });
+                
+                // Delay the actual navigation slightly to ensure visual feedback happens
+                setTimeout(() => {
+                  navigateToCard(i);
+                }, 10);
+              }, true); // Use capture phase for better event handling
+            });
+            
+            // Add a mutation observer to watch for RTL/LTR changes and update dots accordingly
+            const htmlObserver = new MutationObserver(function(mutations) {
+              mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'dir' || mutation.attributeName === 'class') {
+                  console.log("Direction change detected, updating dots");
+                  // Re-sync the dots with the current active card
+                  dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeCardIndex);
+                  });
+                  
+                  // Re-apply scroll position to ensure it's correct after direction change
+                  setTimeout(() => {
+                    navigateToCard(activeCardIndex);
+                  }, 50);
+                }
+              });
+            });
+            
+            // Start observing the HTML element for direction changes
+            htmlObserver.observe(htmlElement, {
+              attributes: true,
+              attributeFilter: ['dir', 'class']
+            });
+          }, 800);
         }, 500);
         
         // For mobile devices, enable touch-based interaction

@@ -237,12 +237,34 @@ button:hover ~ .cursor,
   margin-top: 3rem;
   margin-bottom: 2rem;
   max-width: 200px;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 100;
 }
 
 .intel-logo {
   width: 100%;
   height: auto;
   display: block;
+  transition: all 0.5s ease;
+}
+
+/* Fixed intel logo for scrolling */
+.intel-logo-fixed {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 60px !important;
+  max-width: 60px !important;
+  margin: 0 !important;
+  z-index: 100;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.intel-logo-fixed img {
+  width: 100%;
+  height: auto;
 }
 
 .hero-title {
@@ -637,19 +659,31 @@ button:hover ~ .cursor,
 .timeline-instructions {
   color: var(--text-secondary);
   font-size: 1rem;
-  font-weight: 400;
-  opacity: 0.8;
+  font-weight: 500;
+  opacity: 0.9;
   transition: opacity 0.3s ease;
   position: relative;
   z-index: 2;
   margin-top: -0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 104, 181, 0.08);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  width: auto;
 }
 
 .timeline-instructions small {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px 10px;
-  background-color: rgba(0, 104, 181, 0.05);
   border-radius: 20px;
+  text-align: center;
 }
 
 .timeline-instructions .bi-info-circle {
@@ -669,6 +703,7 @@ kbd {
   line-height: 1;
   padding: 2px 5px;
   white-space: nowrap;
+  margin: 0 2px;
 }
 
 /* Timeline Track Container */
@@ -703,7 +738,7 @@ kbd {
   overflow-x: auto;
   padding: 2rem 0;
   padding-left: calc(50% - 200px);
-  padding-right: calc(50% - 200px);
+  padding-right: calc(50% - 200px + 100px);
   overflow-y: hidden;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -711,7 +746,7 @@ kbd {
   position: relative;
   z-index: 2;
   /* Enhanced scroll snap */
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -733,7 +768,7 @@ kbd {
   position: relative;
   /* Improved scroll snap alignment */
   scroll-snap-align: center;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
 }
 
 /* Improved card focus state */
@@ -833,20 +868,27 @@ kbd {
 .milestone-card {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 450px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
               box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--card-border);
+  background: linear-gradient(145deg, rgba(240, 235, 225, 1) 0%, rgba(220, 212, 198, 1) 100%);
+  border: 1px solid rgba(0, 104, 181, 0.3);
 }
 
 .milestone-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 70px rgba(0, 104, 181, 0.15);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 80px rgba(0, 104, 181, 0.3);
+  border-color: rgba(0, 104, 181, 0.5);
+  background: linear-gradient(145deg, rgba(242, 238, 228, 1) 0%, rgba(224, 216, 202, 1) 100%);
+}
+
+.milestone-card:hover .card-info::after {
+  width: 85px;
+  background-color: var(--accent-highlight);
 }
 
 .card-bg {
@@ -878,10 +920,11 @@ kbd {
   position: absolute;
   bottom: -0.75rem;
   left: 0;
-  width: 60px;
-  height: 3px;
+  width: 70px;
+  height: 4px;
   background-color: var(--accent-green);
   border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .year {
@@ -891,14 +934,16 @@ kbd {
   margin-bottom: 0.3rem;
   line-height: 1.1;
   transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .event {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-green);
   margin-bottom: 0.5rem;
   transition: transform 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 /* Enhanced card visual with transforms */
@@ -907,7 +952,8 @@ kbd {
   overflow: hidden;
   border-radius: 8px;
   margin-top: auto;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
   transform-style: preserve-3d;
   perspective: 1000px;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -923,8 +969,8 @@ kbd {
 
 .card-visual:hover .card-image,
 .touch-active .card-image {
-  transform: scale(1.1) translateZ(30px);
-  filter: brightness(0.7);
+  transform: scale(1.15) translateZ(35px);
+  filter: brightness(0.65);
 }
 
 .card-description-overlay {
@@ -946,6 +992,7 @@ kbd {
 .touch-active .card-description-overlay {
   opacity: 1;
   transform: translateY(0) translateZ(20px);
+  background-color: rgba(0, 104, 181, 0.9);
 }
 
 .card-visual::after {
@@ -1044,45 +1091,47 @@ kbd {
 /* Footer */
 .site-footer {
   background-color: var(--bg-secondary);
-  padding: 4rem 2rem;
+  padding: 1.5rem 0.75rem;
   text-align: center;
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 0.3rem;
 }
 
 .footer-logo img {
-  width: 120px;
+  width: 70px;
   height: auto;
+  margin-bottom: 0.3rem;
 }
 
 .footer-text {
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  line-height: 1.3;
 }
 
 .footer-text p:first-child {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.15rem;
 }
 
 /* Footer Navigation */
 .footer-nav {
-  margin-top: 1rem;
+  margin-top: 0.15rem;
 }
 
 .footer-link {
   color: var(--text-dark);
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.4rem;
   position: relative;
   transition: color 0.3s ease;
+  font-size: 0.75rem;
 }
 
 .footer-link::after {
@@ -1096,22 +1145,56 @@ kbd {
   transition: width 0.3s ease;
 }
 
-.footer-link:hover {
-  color: var(--accent-green);
+/* Adjusting newsletter icons positioning - move them further to sides */
+.element-1 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--text-dark));
+  top: 10%;
+  right: -5%;
+  animation: floatElement 8s ease-in-out infinite, rotateElement 30s linear infinite;
 }
 
-.footer-link:hover::after {
-  width: calc(100% - 1rem);
+.element-4 {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-highlight), var(--accent-blue));
+  bottom: 40%;
+  left: 2%;
+  animation: floatElement 9s ease-in-out infinite 1.5s, rotateElement 22s linear infinite reverse;
 }
 
-.footer-nav .list-inline-item:not(:last-child) {
-  margin-right: 1rem;
+/* Hide elements 2 and 3 */
+.element-2, .element-3 {
+  display: none;
 }
 
-/* RTL support for footer links */
-html.rtl .footer-link::after {
-  left: auto;
-  right: 0.5rem;
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footer-logo img {
+    width: 80px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  
+  .footer-nav {
+    margin-top: 0.3rem;
+  }
+  
+  .footer-link {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .footer-nav .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+  }
 }
 
 /* Animation Keyframes */
@@ -1409,7 +1492,7 @@ html.rtl .footer-link::after {
   }
   
   .milestone-card {
-    height: 300px;
+    height: 380px;
   }
   
   .timeline-instructions {
@@ -1558,7 +1641,7 @@ html.rtl .footer-link::after {
   }
   
   .milestone-card {
-    height: 250px;
+    height: 300px;
   }
   
   .timeline-track-line {
@@ -1597,7 +1680,7 @@ html.rtl .footer-link::after {
   }
   
   .milestone-card {
-    min-height: 250px;
+    min-height: 300px;
   }
   
   .card-info {
@@ -1656,10 +1739,10 @@ html.rtl .footer-link::after {
   }
 }
 
-/* Newsletter Section */
+/* Newsletter Section - Make more compact */
 .newsletter-section {
   position: relative;
-  padding: 8rem 0 10rem;
+  padding: 4rem 0 4.5rem;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
   overflow: hidden;
 }
@@ -1667,6 +1750,8 @@ html.rtl .footer-link::after {
 .newsletter-container {
   position: relative;
   z-index: 5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Background elements */
@@ -1686,31 +1771,32 @@ html.rtl .footer-link::after {
   border-radius: 50%;
   filter: blur(50px);
   opacity: 0.1;
+  transform: scale(0.8);
 }
 
 .circle-1 {
-  width: 40vw;
-  height: 40vw;
-  top: -10%;
-  right: -10%;
+  width: 35vw;
+  height: 35vw;
+  top: -8%;
+  right: -8%;
   background: radial-gradient(circle, var(--accent-blue) 0%, rgba(0, 104, 181, 0) 70%);
   animation: floatCircle 15s ease-in-out infinite;
 }
 
 .circle-2 {
-  width: 30vw;
-  height: 30vw;
-  bottom: -5%;
-  left: -5%;
+  width: 25vw;
+  height: 25vw;
+  bottom: -3%;
+  left: -3%;
   background: radial-gradient(circle, var(--accent-green) 0%, rgba(0, 162, 145, 0) 70%);
   animation: floatCircle 18s ease-in-out infinite reverse;
 }
 
 .circle-3 {
-  width: 20vw;
-  height: 20vw;
-  top: 30%;
-  left: 20%;
+  width: 15vw;
+  height: 15vw;
+  top: 25%;
+  left: 15%;
   background: radial-gradient(circle, var(--accent-highlight) 0%, rgba(0, 199, 177, 0) 70%);
   animation: floatCircle 12s ease-in-out infinite 2s;
 }
@@ -1741,14 +1827,14 @@ html.rtl .footer-link::after {
 .newsletter-content {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 .newsletter-title {
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   background: linear-gradient(120deg, var(--text-dark), var(--accent-green));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1757,10 +1843,10 @@ html.rtl .footer-link::after {
 }
 
 .newsletter-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 3rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -1769,7 +1855,7 @@ html.rtl .footer-link::after {
 .newsletter-form {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -1797,11 +1883,11 @@ html.rtl .footer-link::after {
 }
 
 .btn-subscribe {
-  background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+  background: var(--text-dark);
   color: white;
   border: none;
   border-radius: 12px;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
@@ -1811,15 +1897,25 @@ html.rtl .footer-link::after {
 }
 
 .btn-subscribe:hover {
-  background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+  background: var(--accent-green);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 104, 181, 0.3);
   color: white;
 }
 
+.form-check {
+  margin-top: 0.75rem !important;
+}
+
 .form-check-label {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.newsletter-form .row {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .privacy-link {
@@ -1864,39 +1960,25 @@ html.rtl .footer-link::after {
 }
 
 .element-1 {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--accent-blue), var(--text-dark));
-  top: -60px;
-  right: 20%;
-  animation: floatElement 8s ease-in-out infinite, rotateElement 30s linear infinite;
-}
-
-.element-2 {
-  width: 45px;
-  height: 45px;
-  background: linear-gradient(135deg, var(--accent-green), var(--accent-highlight));
-  bottom: 50px;
-  left: 15%;
-  animation: floatElement 10s ease-in-out infinite 1s, rotateElement 25s linear infinite reverse;
-}
-
-.element-3 {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-brown), var(--accent-green));
-  top: 40%;
-  right: 10%;
-  animation: floatElement 7s ease-in-out infinite 0.5s, rotateElement 20s linear infinite;
+  background: linear-gradient(135deg, var(--accent-blue), var(--text-dark));
+  top: 10%;
+  right: -5%;
+  animation: floatElement 8s ease-in-out infinite, rotateElement 30s linear infinite;
 }
 
 .element-4 {
   width: 40px;
   height: 40px;
   background: linear-gradient(135deg, var(--accent-highlight), var(--accent-blue));
-  bottom: 30%;
-  left: 10%;
+  bottom: 40%;
+  left: 2%;
   animation: floatElement 9s ease-in-out infinite 1.5s, rotateElement 22s linear infinite reverse;
+}
+
+.element-2, .element-3 {
+  display: none;
 }
 
 @keyframes floatElement {
@@ -1934,28 +2016,31 @@ html.rtl .footer-link::after {
 
 @media (max-width: 768px) {
   .newsletter-section {
-    padding: 6rem 0 8rem;
+    padding: 4rem 0 5rem;
   }
   
   .newsletter-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .newsletter-description {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
   
   .btn-subscribe {
     margin-top: 0.5rem;
+    height: calc(3.2rem + 2px);
   }
   
   .element-1, .element-3 {
     right: 5%;
+    transform: scale(0.8);
   }
   
   .element-2, .element-4 {
     left: 5%;
+    transform: scale(0.8);
   }
 }
 
@@ -1991,6 +2076,8 @@ html.rtl .footer-link::after {
   max-height: 100%;
   overflow-y: auto;
   padding: 0.5rem;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 /* Sustainability Feature Cards */
@@ -2003,7 +2090,7 @@ html.rtl .footer-link::after {
 }
 
 .feature-card {
-  background: linear-gradient(145deg, rgba(240, 236, 225, 0.9) 0%, rgba(230, 223, 211, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(240, 236, 225, 0.9) 0%, rgba(230, 225, 215, 0.9) 100%);
   border-radius: 10px;
   padding: 2.5rem 2rem;
   height: 100%;
@@ -2027,7 +2114,8 @@ html.rtl .footer-link::after {
 }
 
 .feature-card:nth-child(3) {
-  background: linear-gradient(145deg, rgba(240, 235, 225, 0.9) 0%, rgba(230, 225, 215, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(235, 230, 220, 1) 0%, rgba(215, 205, 190, 1) 100%);
+  border: 1px solid rgba(0, 104, 181, 0.3);
 }
 
 .feature-card:hover {
@@ -2209,7 +2297,8 @@ html.rtl .footer-link::after {
 }
 
 .sustainability-features .col-md-4:nth-child(3) .feature-card {
-  background: linear-gradient(145deg, rgba(240, 235, 225, 0.9) 0%, rgba(230, 225, 215, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(235, 230, 220, 1) 0%, rgba(215, 205, 190, 1) 100%);
+  border: 1px solid rgba(0, 104, 181, 0.3);
 }
 
 /* Skip to Content Link */
@@ -2235,5 +2324,206 @@ html.rtl .footer-link::after {
 html.rtl .skip-to-content {
   left: auto;
   right: 0;
+}
+
+/* Modal Styling */
+.timeline-modal .modal-content {
+  border-radius: 15px;
+  border: none;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(240, 235, 225, 1) 0%, rgba(220, 212, 198, 1) 100%);
+  border: 1px solid rgba(0, 104, 181, 0.3);
+}
+
+.timeline-modal .modal-header {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+  color: white;
+  border-bottom: none;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-modal .modal-title {
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-modal .modal-body {
+  padding: 2rem;
+  color: var(--text-dark);
+}
+
+.timeline-modal .modal-footer {
+  border-top: none;
+  padding: 1rem 2rem 1.5rem;
+  background: linear-gradient(180deg, rgba(245, 240, 232, 0) 0%, rgba(230, 223, 211, 0.5) 100%);
+}
+
+.timeline-modal .btn-secondary {
+  background-color: var(--accent-blue);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.timeline-modal .btn-secondary:hover {
+  background-color: var(--accent-green);
+}
+
+/* Media Queries for Modals */
+@media (max-width: 768px) {
+  .timeline-modal .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-modal .modal-body {
+    padding: 1rem;
+  }
+}
+
+.timeline-modal h4 {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.timeline-modal h5 {
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-modal p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.timeline-modal ul {
+  color: var(--text-secondary);
+  padding-left: 1.2rem;
+}
+
+.timeline-modal ul li {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-modal ul li strong {
+  color: var(--accent-blue);
+}
+
+.milestone-card:hover .year {
+  color: var(--accent-blue);
+}
+
+.milestone-card:hover .event {
+  color: var(--accent-highlight);
+}
+
+/* Ensure close button is properly positioned in RTL mode */
+html.rtl .modal-header .btn-close {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Ensure RTL support for modal content */
+html.rtl .timeline-modal .modal-body {
+  text-align: right;
+}
+
+html.rtl .timeline-modal ul {
+  padding-right: 1.2rem;
+  padding-left: 0;
+}
+
+/* Additional RTL support for modal row layout */
+html.rtl .timeline-modal .row {
+  flex-direction: row-reverse;
+}
+
+/* Further RTL adjustments for elements inside modals */
+html.rtl .timeline-modal .modal-footer {
+  justify-content: flex-start;
+}
+
+html.rtl .timeline-modal h5 {
+  text-align: right;
+}
+
+/* Timeline card RTL adjustments */
+html.rtl .timeline-card-wrapper {
+  direction: rtl;
+}
+
+html.rtl .card-info::after {
+  right: 0;
+  left: auto;
+}
+
+html.rtl .year,
+html.rtl .event {
+  text-align: right;
+}
+
+/* Newsletter form RTL support */
+html.rtl .newsletter-form .form-check {
+  text-align: right;
+}
+
+html.rtl .form-check-input {
+  float: right;
+  margin-left: 0.5em;
+  margin-right: -1.5em;
+}
+
+html.rtl .form-check-label {
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+/* Footer links RTL support */
+html.rtl .footer-link::after {
+  right: 0.5rem;
+  left: auto;
+}
+
+/* Timeline instructions RTL support */
+html.rtl .timeline-instructions .bi-info-circle {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+/* Feature card RTL support */
+html.rtl .feature-card::after {
+  transform-origin: left;
+}
+
+html.rtl .feature-card:hover::after {
+  transform-origin: right;
+}
+
+/* RTL timeline carousel adjustments */
+html.rtl .timeline-cards-horizontal {
+  direction: rtl;
+}
+
+html.rtl .timeline-card-wrapper {
+  direction: ltr; /* Reset direction for card content */
+}
+
+/* Ensure proper scroll snap in RTL mode */
+html.rtl .timeline-cards-horizontal {
+  scroll-padding-right: calc(50% - 200px);
+  scroll-padding-left: calc(50% - 200px + 100px);
+}
+
+/* Fix hover transformations for RTL */
+html.rtl .milestone-card:hover {
+  transform: translateY(-12px) scale(1.03);
 }
 
